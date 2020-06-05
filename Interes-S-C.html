@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="Diseño y Desarrollo web">
+    <meta name="keywords" content="diseño web, desarrollo web, seo, posicionamiento web">
+    <meta name="author" content="Render2Web">
+    <title> Desarrollo Web | Bienvenidos</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body>
+    <header>
+
+        <div class="contenedor">
+            <div id="marca">
+                <h1><span class="resaltado">IMG</span> plantel economico</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li  class="actual"><a href="Interes-S-C.html">Interes</a></li>
+                    <li><a href="TasaEquivalente.html">Tasa Equivalente</a></li>
+                    <li><a href="DIagramaFlujos.html">Diagrama de Flujo de caja <br/> y Ecuacion Equivalente o de valor</a></li>
+                    <li><a href="nosotros.html">Nosotros</a></li>
+                    <li><a href="servicios.html">Formulas</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="mat">
+        <div class="contenedor">
+            <h1></h1>
+            <p>
+            <h1>Interes Simple</h1>
+            Es aquel interés que se paga únicamente sobre el capital originalmente invertido o prestado; es decir los
+            intereses acumulados no pagan interés (lo interese no se capitalizan )<br />
+            <br/>
+            <b>Intereses Moratorios</b> <br/>
+            • Se causan al No pagar una deuda en la fecha de vencimiento, es decir se generan unos intereses de mora, calculados sobre el saldo por el tiempo que tarda el pago.<br/>
+            • Un pagaré por valor de $500.000 devenga intereses del 2% mensual simple, el plazo es de 45 días. Si se cancela 15 días después de su fecha de vencimiento, calcular el interés moratorio y la cantidad total a pagar. La tasa de interés moratoria es del 3% mensual simple. <br/>
+            <br/>
+            <b>Carecteristcas Del Interes Simple</b>
+            <br/>
+            ⦁ El Capital inicial no varía durante el periodo que dura la operación financiera.<br />
+            ⦁ La tasa de interés siempre se aplicará sobre el mismo capital.<br />
+            ⦁ Los intereses serán siempre iguales en cada período, o menores si hay abonos a capital. <br />
+            <br /><br />
+            <b>Ejemplo de interes simple</b><br/>
+            Calcular el valor del interés que paga un préstamo de $500,000 al 1.5% mensual por 18 meses:<br/>
+            Valor Presente: $500.000<br/>
+            Tasa de interés: 1,5% = 0,015 mensual <br/>
+            Tiempo: 18 meses <br/>
+            Interés: ? <br/>
+            <br/>
+            <br/>
+            I = VP* i * n <br/>
+            I = $500.000 * 0,015 * 18 <br/> 
+            I = $135.000 <br/>
+            </p>
+        </div>
+        <div class="contenedor">
+            <h1>Calcula por tu mismo el Interes</h1>
+            <form id="form1" style="width:250px;height:360px;border:1px solid #ccc;padding:10px;">
+                Interes $:        <br><input type="text" name="num1s" class="formulario"><br>
+                capital Inicial $:<br><input type="text" name="num2s" class="formulario"><br>
+                Tasa de interes:  <br><input type="text" name="num3s" class="formulario">%<br>
+                Tiempo:           <br><input type="text" name="num4s" class="formulario">Meses<br>
+
+                <input type="button" value="Calcular" onclick="simple()">
+                <div id="resultado"></div>
+            </form>  
+        </div>
+    </section>
+    <section id="mat">
+        <div class="contenedor">
+            <h1>Interes Compuesto</h1>
+            <p>
+                Significa que el interés ganado sobre el capital invertido se suma a ese capital. Es decir se gana interés sobre el interés. <br/>
+                Supongamos que invierto hoy vp0 = $100 y a una tasa i= 10% <br/>
+                Al cabo del primer periodo de tiempo obtengo : vp1=vp 0 + i*vp 0 <br/>
+                Al cabo de segundo periodo de tiempo obtengo : vp2=vp 1 + i*vp 1 <br/>
+                Para n periodos, será: <br/>
+                <b>Formula general</b> vp=vp1 *(1+ i)^n <br/> <br/>
+                <b>Características Interés Compuesto</b> <br/>
+
+                ⦁ El capital inicial cambia cada período (Los intereses se capitalizan) 
+                Los intereses que se causan no se pagan, se suman al capital anterior para formar un nuevo capital. <br/>
+                ⦁ La tasa de interés siempre se aplica sobre un capital diferente
+                Los intereses se reinvierten a la misma tasa de interés i. <br/>
+                ⦁ Los intereses periódicos siempre serán mayores
+                Lo anterior da como origen al supuesto básico de las Matemáticas Financieras, llamado supuesto de la reinversión. <br/>
+            </p>
+        </div>
+        <div class="contenedor">
+            <h1>Calcula por tu mismo el Interes</h1>
+            <form id="form1" style="width:250px;height:360px;border:1px solid #ccc;padding:10px;">
+                capital final:$     <br><input type="text" name="num1c" class="formulario"><br>
+                capital Inicial:$   <br><input type="text" name="num2c" class="formulario"><br>
+                Tasa de interes:    <br><input type="text" name="num3c" class="formulario">%<br>
+                periodo del ahorro: <br><input type="text" name="num4c" class="formulario">Numero de periodo<br>
+
+                <input type="button" value="Calcular" onclick="compuesto()">
+                <div id="resultado1"></div>
+            </form> 
+        </div>
+    </section>
+    <script>
+        function simple()
+        {
+            var n1=document.getElementsByName("num1s")[0].value;
+            var n2=document.getElementsByName("num2s")[0].value;
+            var n3=document.getElementsByName("num3s")[0].value;
+            var n4=document.getElementsByName("num4s")[0].value;
+    
+            if( (n1!="" && n2!="" && n3!="" && n4!="") || (n1=="" && n2=="" && n3=="" && n4=="") ){
+                document.getElementById("resultado").innerHTML=" \
+                <br> Debe de dejar un valor vacio o llenar 3 para calcular ";
+            }
+            if( n2!="" && n3!="" && n4!=""){
+                    var Total = 0;  
+                    valor = parseFloat(n2,n3,n4); 
+                    Total = document.getElementById('resultado').innerHTML;
+                    Total = parseFloat(n2) * parseFloat(n3) * parseFloat(n4);
+
+                    document.getElementById('resultado').innerHTML = "\ Resultado en Interes:$ <br>" +Total;
+            }
+            if( n1!="" && n3!="" && n4!=""){
+                var Total = 0;  
+                    valor = parseFloat(n1,n3,n4); 
+                    Total = document.getElementById('resultado').innerHTML;
+                    Total = parseFloat(n1) / (parseFloat(n3) * parseFloat(n4));
+                    document.getElementById('resultado').innerHTML = "\ Resultado en Capital Inicial:$ <br>" +Total;
+            }
+            if( n1!="" && n2!="" && n4!=""){
+                var Total = 0;  
+                    valor = parseFloat(n1,n2,n4); 
+                    Total = document.getElementById('resultado').innerHTML;
+                    Total = (parseFloat(n1) / (parseFloat(n4)) * parseFloat(n4));
+                    document.getElementById('resultado').innerHTML = "\ Resultado en Tasa de interes: <br>" +Total+"%";
+            }
+            if( n1!="" && n2!="" && n3!=""){
+                var Total = 0;  
+                    valor = parseFloat(n1,n2,n3); 
+                    Total = document.getElementById('resultado').innerHTML;
+                    Total = parseFloat(n1) / (parseFloat(n2) * parseFloat(n3));
+                    document.getElementById('resultado').innerHTML = "\ Resultado en Tiempo: <br>" +Total + " Meses";
+            }
+    
+    
+        }
+        function compuesto()
+        {
+            var n1=document.getElementsByName("num1c")[0].value;
+            var n2=document.getElementsByName("num2c")[0].value;
+            var n3=document.getElementsByName("num3c")[0].value;
+            var n4=document.getElementsByName("num4c")[0].value;
+    
+            if( (n1!="" && n2!="" && n3!="" && n4!="") || (n1=="" && n2=="" && n3=="" && n4=="") ){
+                document.getElementById("resultado1").innerHTML=" \
+                <br> Debe de dejar un valor vacio o llenar 3 para calcular ";
+            }
+            if( n2!="" && n3!="" && n4!=""){
+                    var Total = 0;  
+                    valor = parseFloat(n2,n3,n4); 
+                    Total = document.getElementById('resultado').innerHTML;
+                    Total = parseFloat(n2) *(( 1 + parseFloat(n3)) ** parseFloat(n4));
+                    document.getElementById('resultado1').innerHTML = "\ Resultado en Capital final:$ <br>" +Total;
+            }
+            if( n1!="" && n3!="" && n4!=""){
+                var Total = 0;  
+                    valor = parseFloat(n1,n3,n4); 
+                    Total = document.getElementById('resultado').innerHTML;
+                    Total = parseFloat(n1)/(1+parseFloat(n3) ** parseFloat(n4));
+                    document.getElementById('resultado1').innerHTML = "\ Resultado en Capital Inicial:$ <br>" +Total;
+            }
+            if( n1!="" && n2!="" && n4!=""){
+                var Total = 0;  
+                    valor = parseFloat(n1,n2,n4); 
+                    Total = document.getElementById('resultado').innerHTML;
+                    Total = (parseFloat(n1)/parseFloat(n2) ** (1/parseFloat(n4))-1);
+                    document.getElementById('resultado1').innerHTML = "\ Resultado en Tasa de interes: <br>" +Total+"%";
+            }
+            if( n1!="" && n2!="" && n3!=""){
+                var Total = 0;  
+                    valor = parseFloat(n1,n2,n3); 
+                    Total = document.getElementById('resultado').innerHTML;
+                    Total = Math.log((parseFloat(n1)/parseFloat(n2)))/Math.log(1+parseFloat(n3))
+                    document.getElementById('resultado1').innerHTML = "\ Resultado en periodo del ahorro: <br>" +Total + "Numeros de periodos";
+            }
+        }
+        </script>
+</body>
+</html>
